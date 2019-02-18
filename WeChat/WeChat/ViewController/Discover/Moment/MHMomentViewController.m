@@ -181,16 +181,18 @@
     backgroundView.mh_y = -backgroundView.mh_height;
     [self.tableView addSubview:backgroundView];
     
-    
     /// 添加评论View
     MHMomentCommentToolView *commentToolView = [[MHMomentCommentToolView alloc] init];
     self.commentToolView = commentToolView;
     [self.view addSubview:commentToolView];
     [commentToolView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(self.view);
+//        make.height.mas_equalTo(60);
         make.height.mas_equalTo(60);
-        make.bottom.equalTo(self.view).with.offset(60);
+//    make.bottom.equalTo(self.view).with.offset(60);
+        make.bottom.equalTo(self.view).with.offset(-60);
     }];
+    commentToolView.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - 初始化道导航栏
